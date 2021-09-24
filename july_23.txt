@@ -1,0 +1,452 @@
+1.Programs in anonymous function & IIFE:
+
+a)Printing Odd numbers:
+
+Anonymous Function:
+var a = function ()
+{  
+var arr =[1,2,3,4,5,6,7,8,9,10];
+for(var i=0;i<arr.length;i++)
+{
+if(arr[i] % 2!== 0)
+{
+console.log(arr[i]);
+}
+}
+};
+a();
+
+IIFE:
+(function (){ 
+var arr =[1,2,3,4,5,6,7,8,9,10];
+for(var i=0;i<arr.length;i++)
+{
+if(arr[i] % 2!== 0)
+{
+console.log(arr[i]);
+}
+}
+})();
+
+
+
+
+b)Printing Title case:
+
+Anonymous Function:
+var a = function ()
+{  
+var a=["hello","guvi","geeks"];
+var b=[];
+var arr = [];
+for(var i=0;i<a.length;i++)
+{
+  var b=a[i].toString();
+  arr= a[i].charAt().toUpperCase()+a[i].slice(1);
+  console.log(arr);
+}
+};
+a();
+
+IIFE:
+(function (){ 
+var a=["hello","guvi","geeks"];
+var b=[];
+var arr = [];
+for(var i=0;i<a.length;i++)
+{
+  var b=a[i].toString();
+  arr= a[i].charAt().toUpperCase()+a[i].slice(1);
+  console.log(arr);
+}
+})();
+
+
+
+
+c)Sum Of All The numbers:
+
+Anonymous function:
+var a = function ()
+{  
+var n=[1,2,3,4,5]
+var sum=0;
+for(var i=0;i<n.length;i++){
+  sum=sum + + n[i];
+}
+console.log(sum);
+};
+a();
+
+IIFE:
+(function (){ 
+var n=[1,2,3,4,5]
+var sum=0;
+for(var i=0;i<n.length;i++){
+  sum=sum + + n[i];
+}
+console.log(sum);
+})();
+
+
+
+
+d)Return all the prime numbers in an array:
+
+Anonymous function:
+var a = function ()
+{  
+  let n=10;   
+  let array = [10,11,33,21,45,23];
+  for (let i = 0;i<array.length; i++) {
+      for(let j=2;j<n;j++)
+      {
+          var a=array[i]%j;
+        if(a===0){
+          array.splice(i,1);
+        }
+    }
+}
+return array;
+};
+var b=a();
+console.log(b);
+
+IIFE:
+var a = (function ()
+{  
+  let n=10;   
+  let array = [10,11,33,21,45,23];
+  for (let i = 0;i<array.length; i++) {
+      for(let j=2;j<n;j++)
+      {
+          var a=array[i]%j;
+        if(a===0){
+          array.splice(i,1);
+        }
+    }
+}
+return array;
+})();
+
+console.log(a);
+
+
+
+
+e)Return all the palindromes in an array:
+
+Anonymous function:
+var a = function ()
+{    
+  let array = ['caredcar', 1344, 12321, 'did', 'cannot'];
+  for(let i=0;i<array.length;i++){
+    var data = array[i].toString();
+        var len = data.length;
+        for (let j = 1; j < len/2 ; j++) {
+          if(data[j] !== data[len-1-j]){
+           array.splice(i,1);
+          }
+      }
+  } 
+  return array; 
+};
+var b = a();
+console.log(b);
+
+IIFE:
+var a = (function ()
+{    
+  let array = ['caredcar', 1344, 12321, 'did', 'cannot'];
+  for(let i=0;i<array.length;i++){
+    var data = array[i].toString();
+        var len = data.length;
+        for (let j = 1; j < len/2 ; j++) {
+          if(data[j] !== data[len-1-j]){
+           array.splice(i,1);
+          }
+      }
+  } 
+  return array; 
+})();
+console.log(a);
+
+
+
+
+f)Return median of two sorted arrays of same size:
+
+Anonymous function:
+var a = function ()
+{     
+var ar1 = [1, 12, 15, 26, 38];
+var ar2 = [2, 13, 17, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+if (n1 == n2)
+{
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+    for (count = 0; count <= n1; count++)
+    {
+        if (i == n1)
+        {
+            m1 = m2;
+            m2 = ar2[0];
+            break;
+        }
+        else if (j == n1)
+        {
+            m1 = m2;
+            m2 = ar1[0];
+            break;
+        }
+        if (ar1[i] <= ar2[j])
+        {
+            m1 = m2; 
+            m2 = ar1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2;
+            m2 = ar2[j];
+            j++;
+        }
+    }
+ 
+    return (m1 + m2)/2;
+}
+};  
+var b = a();
+console.log(b);
+
+IIFE:
+var a = (function ()
+{     
+var ar1 = [1, 12, 15, 26, 38];
+var ar2 = [2, 13, 17, 30, 45];
+var n1 = ar1.length;
+var n2 = ar2.length;
+if (n1 == n2)
+{
+    var i = 0; 
+    var j = 0; 
+    var count;
+    var m1 = -1, m2 = -1;
+    for (count = 0; count <= n1; count++)
+    {
+        if (i == n1)
+        {
+            m1 = m2;
+            m2 = ar2[0];
+            break;
+        }
+        else if (j == n1)
+        {
+            m1 = m2;
+            m2 = ar1[0];
+            break;
+        }
+        if (ar1[i] <= ar2[j])
+        {
+            m1 = m2; 
+            m2 = ar1[i];
+            i++;
+        }
+        else
+        {
+            m1 = m2;
+            m2 = ar2[j];
+            j++;
+        }
+    }
+ 
+    return (m1 + m2)/2;
+}
+})();  
+console.log(a);
+
+
+
+
+g)Remove duplicates from an array:
+
+Anonymous function:
+var a = function()
+{
+    let a=[2,1,3,5,2,3,1];
+    var len = a.length;
+    var read = {};
+    var arr = [];
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+         var item = a[i];
+         if(read[item] !== 1) {
+               read[item] = 1;
+               arr[j++] = item;
+         }
+    }
+    return arr;
+}
+var b= a();
+console.log(b);
+
+IIFE:
+var a = (function()
+{
+    let a=[2,1,3,5,2,3,1];
+    var len = a.length;
+    var read = {};
+    var arr = [];
+    var j = 0;
+    for(var i = 0; i < len; i++) {
+         var item = a[i];
+         if(read[item] !== 1) {
+               read[item] = 1;
+               arr[j++] = item;
+         }
+    }
+    return arr;
+})();
+console.log(a);
+
+
+
+
+h)Rotate an array by k times:
+
+Anonymous Function:   
+var a = function() {
+  let arr=[1,2,3,4,5,6,7];
+  let k=3;
+  function reverse(start, end) {
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+  reverse(0, (arr.length-1));
+  reverse(0, (k - 1));
+  reverse(k, (arr.length-1));
+  return arr;
+}
+ var b=a();
+ console.log(b);
+
+
+IIFE:
+var a = (function() {
+  let arr=[1,2,3,4,5,6,7];
+  let k=3;
+  function reverse(start, end) {
+    while (start < end) {
+      [arr[start], arr[end]] = [arr[end], arr[start]];
+      start++;
+      end--;
+    }
+  }
+  reverse(0, (arr.length-1));
+  reverse(0, (k - 1));
+  reverse(k, (arr.length-1));
+  return arr;
+})();
+console.log(a);
+
+
+
+
+
+
+3.Below programs in arrow functions:
+
+a)Print odd numbers in an array:
+a = () => {  
+var arr =[1,2,3,4,5,6,7,8,9,10];
+for(var i=0;i<arr.length;i++)
+{
+if(arr[i] % 2!== 0)
+{
+console.log(arr[i]);
+}
+}
+};
+a();
+
+
+
+b)Convert all the strings to title caps in a string array:
+a = ()=>
+{  
+var a=["hello","guvi","geeks"];
+var b=[];
+var arr = [];
+for(var i=0;i<a.length;i++)
+{
+  var b=a[i].toString();
+  arr= a[i].charAt().toUpperCase()+a[i].slice(1);
+  console.log(arr);
+}
+};
+a();
+
+
+
+c)Sum of all numbers in an array:
+a = ()=>
+{  
+var n=[1,2,3,4,5]
+var sum=0;
+for(var i=0;i<n.length;i++){
+  sum=sum + + n[i];
+}
+console.log(sum);
+};
+a();
+
+
+
+
+d)Return all the prime numbers in an array:
+a = ()=>
+{  
+  let n=10;   
+  let array = [10,11,33,21,45,23];
+  for (let i = 0;i<array.length; i++) {
+      for(let j=2;j<n;j++)
+      {
+          var a=array[i]%j;
+        if(a===0){
+          array.splice(i,1);
+        }
+    }
+}
+return array;
+};
+var b=a();
+console.log(b);
+
+
+
+e)Return all the palindromes in an array:
+a = ()=>
+{    
+  let array = ['caredcar', 1344, 12321, 'did', 'cannot'];
+  for(let i=0;i<array.length;i++){
+    var data = array[i].toString();
+        var len = data.length;
+        for (let j = 1; j < len/2 ; j++) {
+          if(data[j] !== data[len-1-j]){
+           array.splice(i,1);
+          }
+      }
+  } 
+  return array; 
+};
+var b = a();
+console.log(b);
+
+
